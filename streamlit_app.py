@@ -19,7 +19,7 @@ session = cnx.session()
 
 session.sql("USE WAREHOUSE COMPUTE_WH").collect()
 
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 
 ingredients_list = st.multiselect(
